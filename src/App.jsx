@@ -24,7 +24,7 @@ const App = () => {
           <Route path="/user-profile" element={< UserProfile />} />
           <Route path="/nutrition-log" element={< NutritionLog />} />
           <Route path="/achievements" element={<Achievements />} />
-          <Route path="/recomendations" element={<Achievements />} />
+          <Route path="/recomendations" element={<Recommendations />} />
 
         </Routes>
       </div>
