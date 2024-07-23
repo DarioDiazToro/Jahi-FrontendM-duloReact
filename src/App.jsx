@@ -1,50 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import "./paginaInicio";
 
-function App() {
-  const [usuario, setUsuario] = useState();
-  const [password, setPassword] = useState();
-  const [logueado, setLogueado] = useState(false);
-  const cambiarUsuario = (event) => {
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from "./components/Login";
+import TrainingLog from './components/TrainingLog';
+import ProgressReport from './components/ProgressReport';
+import PersonalizedPlans from './components/PersonalizedPlans';
 
-    setUsuario(event.target.value);
-  };
-
-  const cambiarClave = (event) => {
-    setPassword(event.target.value);
-  };
-
-
-
-
-  const ingresar = () => {
-    if (usuario == "admin" && password == "admin") {
-      alert("Iniciando sesion...");
-      setLogueado(true);
-
-    } else {
-      alert("Usuario o Contraseña incorrectos");
-    }
-  };
-
-  if (logueado) {
-    return <PaginaInicio />
-  };
-
+const App = () => {
   return (
-    <>
-      <h1>Iniciar Sesion</h1>
-      <input placeholder='Usuario' type="text" name="usuario" id="usuario" value={usuario} onChange={cambiarUsuario} />
-      <input placeholder='Password' type="password" name="password" id="password" value={password} onChange={cambiarClave} />
-      <p>¿Olvidastes la contraseña?</p>
-      <button onClick={ingresar}> Iniciar Sesion</button>
-    </>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/training-log" element={< TrainingLog />} />
+          <Route path="/progress-report" element={< ProgressReport />} />
+          <Route path="/personalized-plans" element={< PersonalizedPlans />} />
+
+        </Routes>
+      </div>
+    </Router>
   )
+};
 
-
-}
-
-export default App
+export default App;

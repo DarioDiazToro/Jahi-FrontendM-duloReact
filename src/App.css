@@ -12,7 +12,17 @@
   transition: filter 300ms;
 }
 
+.link-password {
+  color: #1a1a1aee;
+}
+
+.link-password:hover {
+  color: #3635358f;
+
+}
+
 .logo:hover {
+
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 
