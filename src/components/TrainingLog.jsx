@@ -23,10 +23,10 @@ const TrainingLog = () => {
         <div>
             <h2>Registro de Entrenamiento</h2>
             <form onSubmit={handleSubmit}>
-                <input name="type" placeholder="Tipo de ejercicio" onChange={handleChange} />
-                <input name="duration" placeholder="Duración" onChange={handleChange} />
-                <input name="distance" placeholder="Distancia recorrida" onChange={handleChange} />
-                <input name="calories" placeholder="Calorías quemadas" onChange={handleChange} />
+                <input name="type" autoComplete='off' placeholder="Tipo de ejercicio" onChange={handleChange} />
+                <input name="duration" autoComplete='off' placeholder="Duración" onChange={handleChange} />
+                <input name="distance" autoComplete='off' placeholder="Distancia recorrida" onChange={handleChange} />
+                <input name="calories" autoComplete='off' placeholder="Calorías quemadas" onChange={handleChange} />
                 <button type="submit">Registrar</button>
             </form>
         </div>

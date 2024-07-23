@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 import '../App.css'
+import Home from './Home'
 
 function Login() {
     const [usuario, setUsuario] = useState();
@@ -30,7 +31,7 @@ function Login() {
     };
 
     if (logueado) {
-        return <PaginaInicio />
+        return <Home />
     };
 
     return (

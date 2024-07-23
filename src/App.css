@@ -21,6 +21,16 @@
 
 }
 
+.container-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-bar li a {
+  color: #fff;
+}
+
 .logo:hover {
 
   filter: drop-shadow(0 0 2em #646cffaa);
