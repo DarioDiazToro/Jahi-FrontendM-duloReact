@@ -54,13 +54,13 @@ function RegisterUser() {
                 icon: 'error'
 
             })
-        }else{
+        } else {
             Swal.fire({
                 title: 'Usuario registrado con exito',
                 text: re.mensaje,
                 icon: 'info'
-    
-                })
+
+            })
         }
 
     };
@@ -68,14 +68,55 @@ function RegisterUser() {
 
     return (
         <>
-            <h1>Registrarse</h1>
-            <input placeholder='Nombres' type="text" name="usuario" id="usuario" value={nombres} onChange={cambiarUsuario} />
-            <input placeholder='Password' type="password" name="password" id="password" value={password} onChange={cambiarClave} />
-            <input placeholder='Apellidos' type="text" name="apellidos" id="apellidos" value={apellidos} onChange={cambiarApellidos} />
-            <input placeholder='Email' type="email" name="email" id="email" value={email} onChange={cambiarEmail} />
+            (
+            <div>
+                <div className={`container-form sign-up ${isSignInActive ? '' : 'active'}`}>
+                    <div className="welcome-back">
+                        <div className="message">
+                            <h2>Bienvenido a JAHI Entrenamiento y Nutrición</h2>
+                            <p>Si ya tienes una cuenta, por favor inicia sesión aquí</p>
+                            <button className="sign-up-btn" onClick={toggleForms}>Iniciar Sesión</button>
+                        </div>
+                    </div>
+                    <form className="formulario">
+                        <h2 className="create-account">Crear una cuenta</h2>
+                        <div className="iconos">
+                            <div className="border-icon"><i className="bx bxl-instagram"></i></div>
+                            <div className="border-icon"><i className="bx bxl-linkedin"></i></div>
+                            <div className="border-icon"><i className="bx bxl-facebook-circle"></i></div>
+                        </div>
+                        <p className="cuenta-gratis">Crear una cuenta gratis</p>
+                        <input type="text" value={nombres} onChange={cambiarUsuario} placeholder="Nombres" />
+                        <input type="text" value={apellidos} onChange={cambiarApellidos} placeholder="Apellidos" />
+                        <input type="email" value={email} onChange={cambiarEmail} placeholder="Email" />
+                        <input type="password" value={password} onChange={cambiarClave} placeholder="Contraseña" />
+                        <input type="button" onClick={crearUser} value="Registrarse" />
+                    </form>
+                </div>
 
-
-            <button onClick={crearUser}> Crear usuario</button>
+                <div className={`container-form sign-in ${isSignInActive ? 'active' : ''}`}>
+                    <form className="formulario">
+                        <h2 className="create-account">Iniciar Sesión</h2>
+                        <div className="iconos">
+                            <div className="border-icon"><i className="bx bxl-instagram"></i></div>
+                            <div className="border-icon"><i className="bx bxl-linkedin"></i></div>
+                            <div className="border-icon"><i className="bx bxl-facebook-circle"></i></div>
+                        </div>
+                        <p className="cuenta-gratis">¿Aún no tienes una cuenta?</p>
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Contraseña" />
+                        <input type="button" value="Iniciar Sesión" />
+                    </form>
+                    <div className="welcome-back">
+                        <div className="message">
+                            <h2>Bienvenido de nuevo</h2>
+                            <p>Si aún no tienes una cuenta, por favor regístrate aquí</p>
+                            <button className="sign-in-btn" onClick={toggleForms}>Registrarse</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            );
         </>
     )
 };

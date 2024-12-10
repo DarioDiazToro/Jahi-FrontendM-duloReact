@@ -44,14 +44,17 @@ export class PeticionesHttp {
             }
         } catch (error) {
             const msg = error.response ? JSON.stringify(error.response.data) : error.message;
+            const arr = msg.split(",");
+           const arrMessage =   arr[1].split(":");
+
             console.error("Error put ======>", error.message);
-            console.error("Error put msg ======>", msg);
+            console.error("Error put msg ======>",msg);
             console.error("Error put url ======>", newUrl);
 
 
             return {
                 ok: false,
-                mensaje: `Ocurrio un error (${msg}) `,
+                mensaje: `Ocurrio un error (${arrMessage[1]}) `,
                 data: null
             }
         }

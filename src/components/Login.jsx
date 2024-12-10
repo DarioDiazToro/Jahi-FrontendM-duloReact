@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
-import '../App.css'
+import '../css/login.css'
 import Home from './Home'
 import { PeticionesHttp } from '../helpers/peticionesHttp'
 import Swal from 'sweetalert2'
@@ -41,14 +41,14 @@ function Login() {
                 icon: 'error'
 
             })
-        }else{
+        } else {
             Swal.fire({
                 title: 'Usuario Logueado!',
                 text: re.mensaje,
                 icon: 'info'
-    
+
             });
-           
+
         }
 
         // if (usuario == "admin" && password == "admin") {
@@ -56,19 +56,20 @@ function Login() {
         //     setLogueado(true);
 
         // } else {
-            //     alert("Usuario o Contraseña incorrectos");
-            // }
-       
-    
-            
+        //     alert("Usuario o Contraseña incorrectos");
+        // }
+
+
+
     };
 
-    
+
 
     return (
         <>
+            <div></div>
             <h1>Iniciar Sesion</h1>
-            <input placeholder = 'Email' type="text" name="usuario" id="usuario" value={usuario} onChange={cambiarUsuario} />
+            <input placeholder='Email' type="text" name="usuario" id="usuario" value={usuario} onChange={cambiarUsuario} />
             <input placeholder='Password' type="password" name="password" id="password" value={password} onChange={cambiarClave} />
             <p> <a className='link-password' href="#">¿Olvidastes la contraseña?</a></p>
             <button onClick={ingresar}> Iniciar Sesion</button>
