@@ -92,10 +92,11 @@ function ActualizarPasswordUsuario() {
                 "confirmarPasswordNueva": confirmarPasswordNueva
             }
         );
+        console.log("frontend", passwordNueva);
+
 
         if (!res.ok) {
 
-            console.log(typeof res.mensaje);
 
             Swal.fire({
                 title: 'Error!',
@@ -122,18 +123,18 @@ function ActualizarPasswordUsuario() {
                 <form>
                     <div className="mb-3">
                         <label htmlFor="oldPassword" className="form-label">Contraseña Antigua</label>
-                        <input type="password" className="form-control" id="oldPassword" placeholder="Ingresa tu contraseña actual" />
+                        <input type="password" value={passwordAntigua} onChange={cambiarPassword} className="form-control" id="oldPassword" placeholder="Ingresa tu contraseña actual" />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="newPassword" className="form-label">Contraseña Nueva</label>
-                        <input type="password" className="form-control" id="newPassword" placeholder="Ingresa tu nueva contraseña" />
+                        <input type="password" value={passwordNueva} onChange={cambiarPasswordNueva} className="form-control" id="newPassword" placeholder="Ingresa tu nueva contraseña" />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="confirmPassword" className="form-label">Confirmar Contraseña Nueva</label>
-                        <input type="password" className="form-control" id="confirmPassword" placeholder="Confirma tu nueva contraseña" />
+                        <input type="password" value={confirmarPasswordNueva} onChange={cambiarPasswordNuevaConfirmar} className="form-control" id="confirmPassword" placeholder="Confirma tu nueva contraseña" />
                     </div>
                     <div className="d-grid">
-                        <button type="submit" className="btn btn-primary">Actualizar</button>
+                        <input type='button' className="btn btn-primary" onClick={actulizarPassword} value="Actualizar" />
                     </div>
                 </form>
             </div>
